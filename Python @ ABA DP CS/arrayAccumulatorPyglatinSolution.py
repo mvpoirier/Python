@@ -24,7 +24,8 @@ def programLoop ():
 
         print("\nProgram #2: Pyglatin Generator")
         word = input("Provide me one word: ")
-        pyglatin(word)
+        pyglatin1(word) # Using Python slicing
+        pyglatin2(word) # Using basic operations
 
         response = input("\nPlay again (y or n)? ")
         if response == "n":
@@ -52,11 +53,23 @@ def arrayAccumulator (value):
     print(array)
     
 
-# arrayAccumulator (value)
-# PURPOSE:      Convert a string to "Piglatin" --> Cheese to Heese-Cay!
-# PARAMETER:    word - the word that will be coverted to pyglatin
-def pyglatin (word):
+# pyglatin1 (word)
+# PURPOSE:      Convert a string to "Piglatin" using Python slicing
+# PARAMETER:    word - the word that will be coverted to Piglatin
+def pyglatin1 (word):
     newWord = word[1].upper() + word[2:len(word)] + "-" + word[0].upper() + "ay!"
+    print(newWord)
+
+# pyglatin2 (word)
+# PURPOSE:      Convert a string to "Piglatin" using basic operations
+# PARAMETER:    word - the word that will be coverted to Piglatin
+def pyglatin2 (word):
+    newWord = word[1].upper()
+
+    for k in range (2, len(word), 1): #start at 2, upto len(word), increment by 1
+        newWord = newWord + word[k]
+
+    newWord = newWord + "-" + word[0].upper() + "ay!" 
     print(newWord)
 
         
