@@ -1,2 +1,2 @@
 # Python
-Python example code and projects.
+A selection of completed Python projects.
